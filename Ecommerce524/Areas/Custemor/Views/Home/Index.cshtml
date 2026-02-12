@@ -20,7 +20,7 @@
                             {
                                 <li>
                                     <div class="categories-bars-item">
-                                        <a href="/Home/Index?categoryId=@item.Id">@item.Name</a>
+                                        <a href="/Custemor/Home/Index?categoryId=@item.Id">@item.Name</a>
                                         @* <span>(@item.Products.Count())</span> *@
                                     </div>
                                 </li>
@@ -289,10 +289,10 @@
                                             <img src="~/img/products_img/@item.MainImg" class="img-fluid w-100 rounded-top" alt="" style="width: 100%">
                                         <div class="product-new">New</div>
                                         <div class="product-details">
-                                            @* <a href="/Home/Details/@item.Id"><i class="fa fa-eye fa-1x"></i></a> *@
-                                                <a href="@Url.Action("Details", "Home", new { id = item.Id })">
-                                                    <i class="fa fa-eye fa-1x"></i>
-                                                </a>
+                                            <a href="/Custemor/Home/Details/@item.Id"><i class="fa fa-eye fa-1x"></i></a> 
+                                                @* <a href="@Url.Action("Details", "Home", new { id = item.Id })"> *@
+                                                @*     <i class="fa fa-eye fa-1x"></i>
+                                                </a> *@
                                         </div>
                                     </div>
                                     <div class="text-center rounded-bottom p-4">

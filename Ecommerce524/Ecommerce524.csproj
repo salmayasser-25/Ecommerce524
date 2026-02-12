@@ -13,14 +13,30 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.12" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\ChatApp\Controllers\" />
+    <Folder Include="Areas\ChatApp\Data\" />
+    <Folder Include="Areas\ChatApp\Models\" />
+    <Folder Include="Areas\ChatApp\Views\" />
+    <Folder Include="Areas\Identity\Controllers\" />
+    <Folder Include="Areas\Identity\Data\" />
+    <Folder Include="Areas\Identity\Models\" />
+    <Folder Include="Areas\Identity\Views\" />
+    <Folder Include="Areas\Custemor\Data\" />
+    <Folder Include="Areas\Custemor\Models\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Models\NewFolder\" />
-    <Folder Include="wwwroot\css\customer\" />
+    <Folder Include="wwwroot\css\admin\" />
     <Folder Include="wwwroot\js\customer\" />
     <Folder Include="wwwroot\img\" />
+    <Folder Include="wwwroot\js\admin\" />
     <Folder Include="wwwroot\lib\customer\" />
+    <Folder Include="wwwroot\assets\" />
   </ItemGroup>
 
 </Project>
