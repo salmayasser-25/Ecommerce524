@@ -19,6 +19,7 @@ namespace Ecommerce524.Models
 
         public int BrandId { get; set; }
         public Brand Brand { get; set; } = default!;
+        public ICollection<ProductSubImg> SubImages { get; set; } = new List<ProductSubImg>();
 
     }
 }

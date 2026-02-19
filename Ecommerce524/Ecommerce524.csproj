@@ -32,8 +32,9 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\NewFolder\" />
     <Folder Include="wwwroot\css\admin\" />
+    <Folder Include="wwwroot\img\brand-logo\" />
+    <Folder Include="wwwroot\img\Product\Sub\" />
     <Folder Include="wwwroot\js\customer\" />
-    <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\js\admin\" />
     <Folder Include="wwwroot\lib\customer\" />
     <Folder Include="wwwroot\assets\" />

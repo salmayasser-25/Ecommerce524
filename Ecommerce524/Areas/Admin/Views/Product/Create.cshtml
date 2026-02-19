@@ -1,0 +1,90 @@
+﻿@{
+    var categories = ViewBag.Categories;
+    var brands = ViewBag.Brands;
+}
+
+<div class="container">
+    <div class="row mb-3 align-items-center my-3">
+        <div class="col-md-6">
+            <h2 class="display-6">Create new Product</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row my-3">
+    <div class="col-12">
+        <form method="post" enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input class="form-control" name="Name">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" name="Description"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Main Image</label>
+                <input type="file" class="form-control" name="MainImg">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Sub Images</label>
+                <input type="file" class="form-control" name="SubImgs" multiple>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input class="form-control" name="price">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Discount</label>
+                <input class="form-control" name="Discount">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Quantity</label>
+                <input class="form-control" name="Quantity">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Rate</label>
+                <input class="form-control" name="Rate">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Category</label>
+                <select class="form-select" name="CategoryId">
+                    @foreach (var item in categories)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Brand</label>
+                <select class="form-select" name="BrandId">
+                    @foreach (var item in brands)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Status</label>
+                <select name="Status" class="form-select">
+                    <option value="true">Active</option>
+                    <option value="false">Inactive</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+    </div>
+</div>

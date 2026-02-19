@@ -194,7 +194,7 @@ namespace Ecommerce524.DataAccess.Migrations
             modelBuilder.Entity("Ecommerce524.Models.ProductSubImg", b =>
                 {
                     b.HasOne("Ecommerce524.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("SubImages")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -205,6 +205,11 @@ namespace Ecommerce524.DataAccess.Migrations
             modelBuilder.Entity("Ecommerce524.Models.Categories", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Ecommerce524.Models.Product", b =>
+                {
+                    b.Navigation("SubImages");
                 });
 #pragma warning restore 612, 618
         }
