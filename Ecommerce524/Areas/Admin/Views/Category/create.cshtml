@@ -9,23 +9,31 @@
 <div class="row my-3">
     <div class="col-12">
         <form method="post">
+
             <div class="mb-3">
                 <label for="Name" class="form-label">Name</label>
-                <input class="form-control" id="Name" placeholder="Name" name="name"> 
+                <input class="form-control" id="Name" placeholder="Name" name="Name">
             </div>
+
             <div class="mb-3">
-                <label for="Description"  class="form-label">Description</label> </textarea>
-                <textarea class="form-control" placeholder="Description" id="Description" name="description" style="height: 70px"></textarea>
-                
-            </div>        
+                <label for="Description" class="form-label">Description</label>
+                <textarea class="form-control"
+                          placeholder="Description"
+                          id="Description"
+                          name="Description"
+                          style="height:70px"></textarea>
+            </div>
+
             <div class="mb-3">
                 <label for="Status" class="form-label">Status</label>
-                <select name="status" class="form-select" id="Status">
+                <select name="Status" class="form-select" id="Status">
                     <option value="true">Active</option>
                     <option value="false">InActive</option>
                 </select>
             </div>
+
             <button type="submit" class="btn btn-primary">Submit</button>
+
         </form>
     </div>
 </div>

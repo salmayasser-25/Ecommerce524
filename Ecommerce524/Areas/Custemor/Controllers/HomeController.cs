@@ -10,12 +10,12 @@ namespace Ecommerce524.Areas.Custemor.Controllers
     [Area(SD.CUSTEMOR_AREA)]
     public class HomeController : Controller
     {
-        
-        private ApplicationDbContext _context = new ApplicationDbContext();
+        private readonly ApplicationDbContext _context;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext context, ILogger<HomeController> logger)
         {
+            _context = context;
             _logger = logger;
         }
 
