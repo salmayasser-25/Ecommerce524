@@ -2,6 +2,7 @@ using Ecommerce524.DataAccess;
 using Ecommerce524.Repositories;
 using Ecommerce524.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -17,8 +18,13 @@ namespace Ecommerce524
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.User.RequireUniqueEmail = true;
+                options.SignIn.RequireConfirmedEmail = true;
                 options.Password.RequiredLength = 8;
-            }).AddEntityFrameworkStores<ApplicationDbContext>();
+                options.Lockout.MaxFailedAccessAttempts = 10;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+            }).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
+            
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
@@ -36,7 +42,7 @@ namespace Ecommerce524
             builder.Services.AddScoped<CategoryService>();
 
             builder.Services.AddScoped<IProductService, ProductService>();
-
+            builder.Services.AddTransient<IEmailSender, EmailSender>();
             var app = builder.Build();  // ? ??? ??? ????? ??? ???? ?????? ????
              
             // Configure the HTTP request pipeline.
@@ -48,7 +54,11 @@ namespace Ecommerce524
 
             app.UseHttpsRedirection();
             app.UseRouting();
+            app.UseRouting();
+
+            app.UseAuthentication();
             app.UseAuthorization();
+           
 
             app.MapStaticAssets();
             app.MapControllerRoute(

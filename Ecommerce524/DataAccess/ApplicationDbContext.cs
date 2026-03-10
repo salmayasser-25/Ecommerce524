@@ -18,5 +18,6 @@ namespace Ecommerce524.DataAccess
         public DbSet<ProductColor> ProductColors { get; set; }
         public DbSet<ProductSubImg> ProductSubImgs { get; set; }
         public DbSet<Ecommerce524.ViewModel.RegisterVM> RegisterVM { get; set; } = default!;
+        public DbSet<Ecommerce524.ViewModel.LoginVM> LoginVM { get; set; } = default!;
     }
 }
